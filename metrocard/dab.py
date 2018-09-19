@@ -6,9 +6,8 @@ from struct import *
 from operator import *
 
 if len(sys.argv) < 2:
-        print sys.argv[0] + " usage:\n"
-        print "\t" + sys.argv[0] + " <WAV file> [%age silence threshold (33)]"
-	print
+	print(sys.argv[0] + " usage:\n")
+	print("\t" + sys.argv[0] + " <WAV file> [%age silence threshold (33)]")
 	sys.exit(False)
 
 if len(sys.argv) == 3:
@@ -90,10 +89,10 @@ while n < len(peaks) - 1:
 			zerobl= peaks[n] * 2
 			n= n + 1
 	else:
-		 if peaks[n] < (zerobl + (freq_thres * zerobl / 100)) and peaks[n] > (zerobl - (freq_thres * zerobl / 100)):
+		if peaks[n] < (zerobl + (freq_thres * zerobl / 100)) and peaks[n] > (zerobl - (freq_thres * zerobl / 100)):
 			output += '0'
 			zerobl= peaks[n]
 	n= n + 1		
 sys.stderr.write("number of bits: " + str(len(output)))
 sys.stderr.write("\n")
-print output
+print(output)
