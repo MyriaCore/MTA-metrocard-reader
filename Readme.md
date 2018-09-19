@@ -1,6 +1,9 @@
 # MTA Metrocard Reader
 
-This program allows a person to read a New York MTA metro card. The program was originally made by sephail a few years ago. Around 2017, Linxin took a interest in the program and updated it to its current version today.  Later on, mantie uploaded the program to github. This program is for research and educational purposes only. 
+This program allows a person to read a New York MTA metro card. The program was originally made by sephail a few years ago. Around 2017, Linxin took a interest in the program and updated it to its current version today.  Later on, mantie uploaded the program to github. This program is for research and educational purposes only.
+
+### About this fork
+This fork is an attempt to port this repo to windows by rewriting all of the bash scripts as VBScripts.
 
 
 ### Requirements 
