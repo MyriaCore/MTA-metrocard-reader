@@ -26,9 +26,11 @@ Open up an explorer / cmd window, navigate to the script directory, and run Metr
 
 Card information will appear in the file cards.txt, and debug information about card reads will appear in rcd.log
 
+![Alt Text](https://github.com/MyriaCore/MTA-metrocard-reader/raw/master/gifwin.gif)
+
 #### On Mac / Linux
 Open a terminal and go to the directory of metrocard-reader.sh
 
 run "bash metrocard-reader.sh"
 
-![Alt Text](https://github.com/MantieReid/MTA-metrocard-reader/blob/master/gif.gif)
+![Alt Text](https://github.com/MyriaCore/MTA-metrocard-reader/raw/master/gif.gif)
