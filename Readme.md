@@ -21,6 +21,12 @@ Finally, make sure pyaudio is installed.
 
 ### Reading a card
 
+#### On Windows
+Open up an explorer / cmd window, navigate to the script directory, and run Metrocard-reader.vbs
+
+Card information will appear in the file cards.txt, and debug information about card reads will appear in rcd.log
+
+#### On Mac / Linux
 Open a terminal and go to the directory of metrocard-reader.sh
 
 run "bash metrocard-reader.sh"
