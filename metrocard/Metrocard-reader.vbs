@@ -41,11 +41,8 @@ End Select
 Function Read()
     set fso = CreateObject("Scripting.FileSystemObject")
     cwd = fso.GetParentFolderName(WScript.ScriptFullName)
-    MsgBox cwd
-    ' WshShell.run Replace("python {0}\rcd.py", "{0}", cwd )
     WshShell.run Replace( "cmd /K cd {0} & python rcd.py >> rcd.log", "{0}", cwd), 1, true
     WshShell.run Replace( "cmd /K cd {0} & python dab.py metrocard.wav >> cards.txt", "{0}", cwd), 0
-    ' MsgBox Replace("python {0}\dab.py {0}\metrocard.wav > c:\cards.txt", "{0}", cwd)
     Set file = fso.OpenTextFile(Replace("{0}\cards.txt", "{0}", cwd), 1)
     content = file.ReadAll()
     WshShell.Popup Replace("Card Scanned, contents in {0}\cards.txt!" + vbNewLine + "Displaying contents..." + vbNewLine + content, "{0}", cwd), 60, "MTA Metrocard Reader"
