@@ -1,9 +1,9 @@
 # MTA Metrocard Reader
 
-This program allows a person to read a New York MTA metro card. The program was originally made by sephail a few years ago. Around 2017, Linxin took a interest in the program and updated it to its current version today.  Later on, mantie uploaded the program to github. This program is for research and educational purposes only.
+This program allows a person to read a New York MTA metro card. The program was originally made by sephail a few years ago. Around 2017, Linxin took a interest in the program and updated it to its current version today.  Later on, mantie uploaded the program to github. Later still, MyriaCore ported it to windows using VBScripts. This program is for research and educational purposes only. 
 
 ### About this fork
-This fork is an attempt to port this repo to windows by rewriting all of the bash scripts as VBScripts.
+This fork is an attempt to port this repo to windows by rewriting all of the bash scripts as VBScripts. Functionality provided by `mcdecode.pl` such as the decoding and interpretation of MetroCard information has not yet been successfully ported.
 
 
 ### Requirements 
@@ -17,7 +17,7 @@ You need a card reader/writer that is able to read tracks 1, 2, and 3.  A good e
 
 Finally, make sure pyaudio is installed. 
 
-<a href="https://people.csail.mit.edu/hubert/pyaudio/">pyaudio</a>
+
 
 ### Reading a card
 
@@ -34,3 +34,7 @@ Open a terminal and go to the directory of metrocard-reader.sh
 run "bash metrocard-reader.sh"
 
 ![Alt Text](https://github.com/MyriaCore/MTA-metrocard-reader/raw/master/gif.gif)
+
+## Credits
+- <a href="https://github.com/MantieReid">MantieReid</a>: <a href="https://github.com/MantieReid/MTA-metrocard-reader">Repository</a> maintainer.
+- Linxin: Original Author (I haven't tracked down any links on this guy yet, but if anyone finds any, pull requests are welcome)
