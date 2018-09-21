@@ -1,16 +1,9 @@
- \#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#
-\#                                      \#
+= MTA Metrocard Decoding System V1.1= 
 
-\#  MTA Metrocard Decoding System V1.1  \#
+==Written in 2017 by Linxin==
 
-\#       Written in 2017 by Linxin      \#
+====run Metrocard-reader to decode the metro cards====
 
-\#                                      \#
-
- \#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#
-
-
-run Metrocard-reader to decode the metro cards
 == Code ==
 mcdecode.pl: metrocard decoder 
 dab.py: ADC decoder
