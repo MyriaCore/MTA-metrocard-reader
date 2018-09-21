@@ -29,51 +29,49 @@ import string
 from operator import *
 
 if len(sys.argv) < 2:
-	print sys.argv[0] + " usage:\n"
-	print "\t" + sys.argv[0] + " <data ('011001')> [r]everse"
-	print
-
+	print( sys.argv[0] + " usage:\n")
+	print( "\t" + sys.argv[0] + " <data ('011001')> [r]everse")
 	sys.exit(-1)
 
 data= sys.argv[1]
 if len(sys.argv) == 3 and sys.argv[2] == 'r':
-	newdata= ''
-	n= len(data) - 1
+	newdata = ''
+	n = len(data) - 1
 	while n >= 0:
 		newdata += data[n]
-		n= n - 1
-	data= newdata
+		n = n - 1
+	data = newdata
 
 # check for TK2 or TK3 data - find start sentinel
-start_decode= data.find("11010")
+start_decode = data.find("11010")
 if start_decode < 0:
-	print "no start sentinel found!"
+	print( "no start sentinel found!")
 	sys.exit(-1)
-end_sentinel= data.find("11111")
+end_sentinel = data.find("11111")
 # check end sentinel is on 5 bit boundry
 while (end_sentinel - start_decode) % 5:
-	newpos= data[end_sentinel + 1:].find("11111")
+	newpos = data[end_sentinel + 1:].find("11111")
 	if newpos >= 0:
 		end_sentinel += newpos + 1
 	else:
-		print "no end sentinel found!"
+		print( "no end sentinel found!")
 		sys.exit(-1)
 # LRC comes immediately after end sentinel
-actual_lrc= end_sentinel + 5
+actual_lrc = end_sentinel + 5
 # initialise rolling LRC
-rolling_lrc= [0,0,0,0,0]
-decoded_string= ''
+rolling_lrc = [0,0,0,0,0]
+decoded_string = ''
 # do the decode
 while start_decode <= end_sentinel:
-	asciichr= 48
-	parity= int(data[start_decode + 4])
+	asciichr = 48
+	parity = int(data[start_decode + 4])
 	for x in range(4):
 		asciichr += int(data[start_decode + x]) << x
 		parity += int(data[start_decode + x])
-		rolling_lrc[x]= xor(rolling_lrc[x],int(data[start_decode + x]))
+		rolling_lrc[x] = xor(rolling_lrc[x],int(data[start_decode + x]))
 	# check parity
 	if not parity % 2:
-		print "parity error!"
+		print( "parity error!")
 		sys.exit(-1)
 	decoded_string += chr(asciichr)
 	start_decode += 5	
@@ -81,9 +79,9 @@ while start_decode <= end_sentinel:
 parity= 1
 for x in range(4):
 	parity += rolling_lrc[x]
-rolling_lrc[4]= parity % 2
+rolling_lrc[4] = parity % 2
 for x in range(5):
 	if not rolling_lrc[x] == int(data[actual_lrc + x]):
-		print "LRC/CRC check failed!"
+		print( "LRC/CRC check failed!")
 		sys.exit(-1)
-print decoded_string
+print( decoded_string)

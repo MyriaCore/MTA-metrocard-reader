@@ -17,8 +17,8 @@ import string
 from operator import *
 
 if len(sys.argv) < 3:
-	print "cmsb.py v0.2"
-	print "Usage: %s <TRACK No.> <DATA> [PADDING]" % sys.argv[0]
+	print( "cmsb.py v0.2")
+	print( "Usage:" + sys.argv[0] + " <TRACK No.> <DATA> [PADDING]")
 	sys.exit(False)
 
 data = sys.argv[2]
@@ -47,7 +47,7 @@ for x in range(padding):
 for x in range( len(data) ):
 	raw = ord(data[x]) - base
 	if raw < 0 or raw > max:
-		print 'Illegal character:', chr(raw+base)
+		print('Illegal character:' + chr(raw+base))
 		sys.exit(False)
 	parity = 1
 	for y in range(bits-1):
@@ -65,4 +65,4 @@ output += chr((parity % 2) + ord('0'))
 for x in range(padding):
 	output += zero
 
-print output
+print( output)
