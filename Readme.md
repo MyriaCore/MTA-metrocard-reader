@@ -37,4 +37,4 @@ run "bash metrocard-reader.sh"
 
 ## Credits
 - <a href="https://github.com/MantieReid">MantieReid</a>: <a href="https://github.com/MantieReid/MTA-metrocard-reader">Repository</a> maintainer.
-- Linxin Wu: Original Author
+- <a href="https://www.youtube.com/channel/UC22iZgwwgWQZfLMVFEDtMbw">Linxin Wu</a>: Original Author
